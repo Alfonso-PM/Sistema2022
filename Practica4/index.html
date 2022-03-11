@@ -29,11 +29,11 @@
 
         function muestraPosicion(posicion){
             //mapa.innerHTML = "Latitud: " + posicion.coords.latitude + "<br>" + ", longitud: " + posicion.coords.longitude;
-            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude
+            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude;
 
-            var imagenmapa = document.getElementById("imagenmapa")
+            var imagenmapa = document.getElementById("imagenmapa");
 
-            imagenmapa.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas + "&zoom=18&size=800x800&key=&key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU"
+            imagenmapa.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas + "&zoom=18&size=800x800&key=&key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU";
         }
 
     </script>
