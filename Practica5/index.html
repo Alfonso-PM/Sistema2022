@@ -63,7 +63,7 @@
                 let propiedadesMarcador = {
                     position: posicion,
                     map,
-                    title: "MARCADOR"
+                    title: "Marcador"
                 }
 
                 const marcador = new google.maps.Marker(propiedadesMarcador);
@@ -75,7 +75,7 @@
                 });
 
                 marcador.addListener("click", ()=>{
-
+                    infoWindow.open(map,marcador);
                 });
             });
  
