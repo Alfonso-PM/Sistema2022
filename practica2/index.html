@@ -7,19 +7,37 @@
     <title>PRACTICA 2 NAVIGATOR</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+    <LINK REL=StyleSheet HREF="bootstrap.css" TITLE="bootstrap">
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="row m-5">
+<body style="background-color: #dcd0ff;">
+
+    <div class="container-fluid p-2" align="center">
+        <div class="row p-3">
             <div class="col-12">
-                <button onclick="obtieneDatos()" class="btn btn-primary text-center">OBTIENE DATOS DEL NAVEGADOR</button>
+                <button onclick="obtieneDatos()" class="btn btn-primary">OBTIENE DATOS DEL NAVEGADOR</button>
                 <ul class="m-5"  id="navegador">
                     <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-2" align="center">
+        <div class="row p-3">
+            <div class="col-12">
+                <img src="imagenes/axoAcua2.png" width="320px" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-white">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="py-3 px-2">Pie de pagina</h3>
+                <p class="py-3 px-2">Sigueme en mis redes sociales: </p> <p href="https://www.facebook.com/IrezArtStudio/?__tn__=%3C%3C*F"><i class="fa-brands fa-facebook"></i> Irez Art Studio</p>   <p><i class="fa-brands fa-instagram"></i> @irez_art_studio</p> 
             </div>
         </div>
     </div>
@@ -40,6 +58,9 @@
     </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa" async defer></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://kit.fontawesome.com/55e0ec9bc6.js" crossorigin="anonymous"></script>
 </body>
 </html>
