@@ -7,47 +7,42 @@
     <title>PRACTICA 2 NAVIGATOR</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+    <LINK REL=StyleSheet HREF="bootstrap.css" TITLE="bootstrap">
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="row m-5">
+
+
+
+
+
+<body style="background-color: #e0b0ff;">
+
+    <div class="container-fluid p-2"  align="center">
+        <div class="row p-3">
             <div class="col-12">
-                <ul class="m-5"  id="navegador">
-                    <li>
-                      <a href="practica1/index.html">Practica1</a>
-                      </li>
-                    <li>
-                      <a href="practica2/index.html">Practica2</a>
-                      </li>
-                      <li>
-                        <a href="Practica3/index.html">Practica3</a>
-                        </li>
-                        <li>
-                            <a href="Practica4/index.html">Practica4</a>
-                            </li>
-                            <li>
-                                <a href="Practica5/index.html">Practica5</a>
-                                </li>
-                </ul>
+                <img src="https://scontent.fgdl3-1.fna.fbcdn.net/v/t39.30808-6/272964684_125749169959985_645142343462498947_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=973b4a&_nc_ohc=ClZVtqhyN9sAX_Q8CXi&_nc_ht=scontent.fgdl3-1.fna&oh=00_AT_8xRy-TnBWI9PUm0DZ5iUkiHTkDttAmW1PjI-Fq9x8Cg&oe=6232BFB9" width="15%" alt="">
             </div>
         </div>
     </div>
 
-
-    <script>
-
-        var navegador = document.getElementById("navegador");
-
-        var datos = navegador.getElementsByTagName("li")
-
-        function obtieneDatos(){
-            datos[0].innerHTML = "EL NOMBRE DE MI NAVEGADOR ES: " + navigator.appCodeName;
-            datos[1].innerHTML = "LA VERSION DEL NAVEGADOR ES: " + navigator.appVersion;
-            datos[2].innerHTML = "STATUS DE INTERNET: " + navigator.onLine;
-            datos[3].innerHTML = "PLATAFORMA: " + navigator.platform;
-        }
-    </script>
+    <div class="container-fluid p-2" align="center">
+        <div class="row m-5 p-10">
+            <div class="col-12 p-3">
+                <a class="btn btn-primary" href="practica1/index.html">PRACTICA 1</a>
+            </div>
+            <div class="col-12 p-3">
+                <a class="btn btn-primary" href="practica2/index.html">PARCTICA 2</a>
+            </div>
+            <div class="col-12 p-3">
+                <a class="btn btn-primary" href="Practica3/index.html">PARCTICA 3</a>
+            </div>
+            <div class="col-12 p-3">
+                <a class="btn btn-primary" href="Practica4/index.html">PARCTICA 2</a>
+            </div>
+            <div class="col-12 p-3">
+                <a class="btn btn-primary" href="Practica5/index.html">PARCTICA 5</a>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
