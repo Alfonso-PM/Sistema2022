@@ -15,7 +15,7 @@
 
     <script>
         var paises = document.getElementById("paises");
-        fetch("https://sistemasgeo.com/2022/fetch/paises.json")
+        fetch("paises.json")
         .then(function(response){
             console.log(response);
             response.json().then(datos => {
