@@ -10,17 +10,22 @@
     <div id="paises"></div>
 
     <script>
-
         var paises = document.getElementById("paises");
 
         fetch("datos.json")
-        .then( function(response){
-            console.log(response)
-            response.json().then( function(datos){
-                console.log(datos)
+        .then(function(response){
+
+            console.log(response);
+            response.json().then(datos => {
+
+                datos.forEach(registro => {
+                    let nombre = document.createElement("p");
+                    nombre.textContent = "Pais: " + registro.country + " , casos: " + registro.cases;
+                    paises.appendChild(nombre);
+                });
+
             });
         });
-
     </script>
 </body>
 </html>
