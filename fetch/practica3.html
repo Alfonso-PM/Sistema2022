@@ -57,9 +57,28 @@
         var namePais;
         var product;
 
-        function selectOption(){
+        
+
+        
+
+        var coordenadas = {
+            lat : 0,
+            lng : 0
+        }
+
+        var propiedades = {
+            center : coordenadas,
+            zoom : 2
+        }
+
+        
+
+        function iniciaMapa(){
+
+
+            function selectOption(){
         product = document.getElementById("Producto").value;
-        document.getElementById('lblProduct').innerHTML = product;
+       // document.getElementById('lblProduct').innerHTML = product;
         if(product == 1){
                 coordenadasProductoLat = "-99.1276" 
                 coordenadasProductoLng = "19.427"
@@ -80,23 +99,11 @@
                 coordenadasProductoLng = "19.427"
                 namePais = "Japón"
             }
-        obtieneMarcadores()
-        iniciaMapa()
+       // obtieneMarcadores()
+        //iniciaMapa()
         }
 
-        
-
-        var coordenadas = {
-            lat : 0,
-            lng : 0
-        }
-
-        var propiedades = {
-            center : coordenadas,
-            zoom : 2
-        }
-
-        function obtieneMarcadores(){
+            function obtieneMarcadores(){
             
 
             const markers = [
@@ -110,7 +117,6 @@
             return markers;
         }
 
-        function iniciaMapa(){
             const map = new google.maps.Map(document.getElementById("map"), propiedades);
 
             const marcadores = obtieneMarcadores();
