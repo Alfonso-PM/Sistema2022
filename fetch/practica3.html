@@ -60,6 +60,26 @@
         function selectOption(){
         product = document.getElementById("Producto").value;
         document.getElementById('lblProduct').innerHTML = product;
+        if(product == 1){
+                coordenadasProductoLat = "-99.1276" 
+                coordenadasProductoLng = "19.427"
+                namePais = "Mexico"
+            }
+            if(product == "2"){
+                coordenadasProductoLat = "-99.1276" 
+                coordenadasProductoLng = "19.427"
+                namePais = "Mexico"
+            }
+            if(product == 3){
+                coordenadasProductoLat = "-99.1276" 
+                coordenadasProductoLng = "19.427"
+                namePais = "Mexico"
+            }
+            if(product == "4"){
+                coordenadasProductoLat = "-99.1276" 
+                coordenadasProductoLng = "19.427"
+                namePais = "Mexico"
+            }
         obtieneMarcadores()
         iniciaMapa()
         }
@@ -77,11 +97,7 @@
         }
 
         function obtieneMarcadores(){
-            if(product == "1"){
-                coordenadasProductoLat = "-99.1276" 
-                coordenadasProductoLng = "19.427"
-                namePais = "Mexico"
-            }
+            
 
             const markers = [
                 {
