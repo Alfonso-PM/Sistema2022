@@ -31,7 +31,7 @@
     <div class="container-fluid p-2" align="center">
         <div class="row p-3">
             <div class="col-12">
-                <Select id="Producto">
+                <Select onChange="selectOption();" id="Producto">
                     <option selected:select value="">PRODUCTOS</option>
                     <option value="1">STICKERS</option>
                     <option value="2">SKETCHBOOK</option>
@@ -55,8 +55,14 @@
     
 
     <script>
-        var product = document.getElementById('Producto').value;
+
+
+        function selectOption(){
+            var product = document.getElementById("Producto").value;
         document.getElementById('lblProduct').innerHTML = product;
+        }
+
+        
         var coordenadas = {
             lat : 0,
             lng : 0
