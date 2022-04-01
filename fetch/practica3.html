@@ -24,19 +24,19 @@
     <div class="container-fluid p-2" align="center">
         <div class="row p-3">
             <div class="col-12">
-                <h1>ESTE PRODUCTO LO IMPORTAMOS DE...</h1>
+                <h1 id="lblProduct">ESTE PRODUCTO LO IMPORTAMOS DE...</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid p-2" align="center">
         <div class="row p-3">
             <div class="col-12">
-                <Select>
+                <Select id="Producto">
                     <option selected:select value="">PRODUCTOS</option>
-                    <option value="">STICKERS</option>
-                    <option value="">SKETCHBOOK</option>
-                    <option value="">DESIGN TABLET</option>
-                    <option value="">PIN</option>
+                    <option value="1">STICKERS</option>
+                    <option value="2">SKETCHBOOK</option>
+                    <option value="3">DESIGN TABLET</option>
+                    <option value="4">PIN</option>
                 </Select>
             </div>
         </div>
@@ -55,7 +55,8 @@
     
 
     <script>
-
+        var product = document.getElementById('Producto');
+        document.getElementById('lblProduct').innerHTML = product;
         var coordenadas = {
             lat : 0,
             lng : 0
