@@ -47,7 +47,7 @@
     <div class="container-fluid p-2" align="center">
         <div class="row">
             <div class="col-12">
-                <div id="map" class="w-100">
+                <div id="map">
 
                 </div>
             </div>
@@ -60,6 +60,7 @@
     <script>
         var coordenadasProductoLat;
         var coordenadasProductoLng;
+        var namePais;
         var product;
 
         function selectOption(){
@@ -80,15 +81,17 @@
         }
 
         function obtieneMarcadores(){
-            if(product == '3'){
-
+            if(product == 1){
+                coordenadasProductoLat = "-99.1276" 
+                coordenadasProductoLng = "19.427"
+                namePais = "Mexico"
             }
 
             const markers = [
                 {
-                    name:"Mexico",
-                    longitude:"-99.1276",
-                    latitude:"19.427"
+                    name:namePais,
+                    longitude:coordenadasProductoLat,
+                    latitude:coordenadasProductoLat
                 }
             ]
 
