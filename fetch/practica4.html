@@ -1,39 +1,87 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 4</title>
-</head>
-<body>
+<html>
+    <head>
+    <title>Mapa de información por país Covid-19, en colaboración con los Alumnos de 6o Semestre de Sistemas de la Universidad DeLasalle Bajío hemos creado un mapa mundial con los casos de Covid-19 en tiempo real</title>
 
-    <button onclick="obtieneUbicacion()">Obtener ubicación</button>
-    <div id="mapa">
-        <img id="imagenmapa" src="" alt="Imagen de mapa">
-    </div>
-
-    <p id="alerta"></p>
-    <script>
-        var mapa = document.getElementById("mapa");
-        function obtieneUbicacion() {
-            if(navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(muestraPosicion);
-            }
-            else
-            {
-                var alerta = document.getElementById("alerta");
-                alerta.innerHTML = "El navegador no dispone de Geolocalización";
-            }
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+    
+        #map {
+        height: 100%;
         }
-        function muestraPosicion(posicion) {
+    
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+    </style>
+    </head>
+    <body>
+    <div id="map"></div>
+    <script>
+    
+    var coordenadas = {
+        lat: 0, 
+        lng: 0
+        }
 
-            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude;
-            
-            var imagenmapa = document.getElementById("imagenmapa");
+    var propiedades = {
+        center: coordenadas,
+        zoom: 2
+        }
 
-            imagenmapa.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas + "&zoom=12&size=400x400&key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU"
-        }   
+    
+
+    function iniciaMapa() {
+
+    
+        fetch('https://sistemasgeo.com/2022/fetch/paises.json')
+        .then(function(response) {
+
+            response.json().then(function(datos) {
+    
+                const map = new google.maps.Map(document.getElementById('map'), propiedades);
+
+                console.log(datos);
+
+                datos.forEach( marcador => {
+
+                    console.log(marcador);
+
+                    var informacion = "<strong>País:</strong> "+ marcador.CountryName;
+
+                    var infowindow = new google.maps.InfoWindow({
+                        content: informacion
+                    });
+
+                    let marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
+                        title: marcador.CountryName  
+                    });
+
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+
+                });
+            });
+        })
+        .catch(function(error) {
+            console.log('Hubo un problema con la petición Fetch:' + error.message);
+        });
+
+        
+    }
+    
+
+
+    
     </script>
-</body>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa">
+    </script>
+    </body>
 </html>
