@@ -1,25 +1,24 @@
 
-  a {
+a {
     text-decoration:none;
     color:#FFF;
   }
   .rainbow-button {
-    width:calc(20vw + 6px);
-    height:calc(8vw + 6px);
-    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    width:calc(150px);
+    height:calc(90px);
+    background-image: linear-gradient(90deg,  #00CED1 0%, #9400D3 49%, #FF1493 80%, #00BFFF 100%);
     border-radius:5px;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-transform:uppercase;
-    font-size:3vw;
+    font-size:27px;
     font-weight:bold;
   }
   .rainbow-button:after {
     content:attr(alt);
-    width:20vw;
-    height:8vw;
-    background-color:#191919;
+    width:120px;
+    height:60px;
+    background-color:#dcd0ff;
     display:flex;
     align-items:center;
     justify-content:center;
