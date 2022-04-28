@@ -127,6 +127,19 @@
             var mapa3 = new google.maps.Map(document.getElementById('mapa1'),propiedades3);
 
 
+            var propiedades4 = {
+                center: coordenadas,
+                zoom: 12,
+                mapTypeControl: true,
+                mapTypeControlOption : {
+                    style : google.maps.mapTypeControlStyle.DROPDOWN_MENU,
+                    mapTypeIds : ['roadmap','satelite','terrain']
+                }
+            }
+
+            var mapa4 = new google.maps.Map(document.getElementById('mapa1'),propiedades4);
+
+
 
 
         }
