@@ -82,18 +82,6 @@
             </div>
         </div>
     </div>
-
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <div id="mapa7" class="bg-light"></div>
-                    <p >MAPA 45 GRADOS</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         function iniciaMapa(){
             var coordenadas = {
@@ -153,6 +141,22 @@
                 mapa4.panTo(latLng);
             }
 
+            var mapa5 = new google.maps.Map(document.getElementById('mapa5'),propiedades1);
+            var infowindow = new google.maps.InfoWindow({
+            content : 'Haz click para obtener las coordenadas',
+            position : coordenadas
+            });
+
+            infowindow.open(mapa5);
+
+            mapa5.addListener('click', function(evento){
+            infowindow.close();
+
+            infowindow = new google.maps.InfoWindow({ position: evento.latLng });
+            infowindow.setContent(evento.latLng.toString());
+            infowindow.open(mapa5);
+
+});
 
 
 
