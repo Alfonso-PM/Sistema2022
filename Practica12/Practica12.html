@@ -43,11 +43,11 @@
             <div class="row">
                 <div class="col-6">
                     <div id="mapa1" class="bg-light"></div>
-                    <p >MAPA CON CONTROLES ESTANDAR</p>
+                    <p >EVENTO CLICK</p>
                 </div>
                 <div class="col-6">
                     <div id="mapa2" class="bg-light"></div>
-                    <p >MAPA SIN CONTROLES</p>
+                    <p >REGRESA AL CENTRO</p>
                 </div>
             </div>
         </div>
@@ -58,11 +58,11 @@
             <div class="row">
                 <div class="col-6">
                     <div id="mapa3" class="bg-light"></div>
-                    <p >MAPA CON ZOOM DESACTIVADO</p>
+                    <p >OBTIENE NIVEL DE ZOOM</p>
                 </div>
                 <div class="col-6">
                     <div id="mapa4" class="bg-light"></div>
-                    <p >MAPA CON CONTROL OPTION</p>
+                    <p >COLOCA MARKER Y CENTRA</p>
                 </div>
             </div>
         </div>
@@ -130,7 +130,6 @@
 
             var mapa3 = new google.maps.Map(document.getElementById('mapa3'),propiedades1);
             mapa3.addListener('zoom_changed', function(){
-
                 var infowindow = new google.maps.InfoWindow({
                     content : 'Cambia el zoom',
                     position : coordenadas
@@ -138,9 +137,21 @@
                 infowindow.open(mapa3);
                 nivelZoom = mapa3.getZoom();
                 infowindow.setContent('Zoom:'+nivelZoom);
-
             });
 
+
+            var mapa4 = new google.maps.Map(document.getElementById('mapa4'),propiedades1);
+            mapa4.addListener('click', function(e){
+                console.log(e.latLng);
+                estableceMarcador(e.latLng);
+            });
+            function estableceMarcador(latLng){
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: mapa4
+                });
+                mapa4.panTo(latLng);
+            }
 
 
 
